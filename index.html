@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Open-Vocabulary Intention-Guided Object Detection using Vision Language Models">
+  <meta property="og:title" content="What Do You Really Want? - OV-IGOD"/>
+  <meta property="og:description" content="Open-Vocabulary Intention-Guided Object Detection Meets Vision Language Models"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/myimages/Fig1.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="What Do You Really Want? - OV-IGOD">
+  <meta name="twitter:description" content="Open-Vocabulary Intention-Guided Object Detection using Vision Language Models">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/myimages/Fig1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="intention-guided object detection, vision language models, open vocabulary, embodied AI, P-FiLM, Florence-2">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>What Do You Really Want? - Open-Vocabulary Intention-Guided Object Detection</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">What Do You Really Want? - Open-Vocabulary Intention-Guided Object Detection Meets Vision Language Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">Anonymous Author(s)</span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Anonymous Organization<br>ICRA 2025 (Under Review)</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Paper PDF link -->
+                      <span class="link-block">
+                        <a href="#" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="#" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code - Coming Soon</span>
+                  </a>
+                </span>
+
+                <!-- Dataset Link -->
+                <span class="link-block">
+                  <a href="#" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser image-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/myimages/Fig1.png" alt="Overall pipeline of OV-IGOD approach" style="width: 100%; max-width: 1000px;"/>
+          <p class="has-text-centered is-size-6 has-text-grey">
+            <strong>Fig. 1.</strong> Overall pipeline of our OV-IGOD approach. Top-left: Multi-stage data construction using InternVL3-8B and GPT-4o to generate free-form intention annotations from SUN-RGBD images. Top-right: Task illustration of our task. Bottom-left: High-quality dataset with open-vocabulary intentions aligned with object affordances. Bottom-right: Fully open-source release of model, code, and benchmark.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End teaser image -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Understanding and responding to human intentions in visual environments is a crucial capability for embodied agents to provide intuitive assistance. We introduce <strong>Open-Vocabulary Intention-Guided Object Detection (OV-IGOD)</strong>, a novel task requiring detection of objects that fulfill free-form human intentions. This task presents unique challenges beyond traditional object detection or visual grounding, as it demands understanding implicit needs, reasoning about object affordances, and precise localizing relevant targets. 
+          </p>
+          <p>
+            To advance research in this direction, we introduce <strong>IGOD-Bench</strong>, a novel dataset featuring 9.3K images and 21.5K diverse intention annotations that preserve contextual relevance, spatial precision, and natural language variation. Our data construction pipeline employs a multi-stages approach combining detail caption generation by InternVL3-8B, intention prompting with GPT-4o, and rigorous manual review for quality assurance. 
+          </p>
+          <p>
+            Leveraging this dataset, we develop <strong>PF-Florence</strong>, which enhances the Florence-2 vision language model with our proposed Prompted Feature-wise Linear Modulation (P-FiLM) mechanism. P-FiLM addresses limitations in conventional modulation approaches by incorporating learnable queries that selectively extract and utilize textual information for visual feature conditioning. Our method significantly outperforms existing approaches, achieving up to 36% relative improvement on AP metrics and demonstrating superior intention understanding capabilities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Dataset Construction -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">OV-IGOD Benchmark Construction</h2>
+          <img src="static/myimages/Fig2.png" alt="Multi-stage data construction pipeline" style="width: 100%; max-width: 1000px;"/>
+          <p class="has-text-centered is-size-6 has-text-grey">
+            <strong>Fig. 2.</strong> Our multi-stage data construction pipeline for OV-IGOD dataset. The process consists of three key stages: detail caption generation, intention generation, and quality checking, ultimately producing triplets of ⟨image, intention, bounding box⟩.
+          </p>
+          
+          <div class="content has-text-justified" style="margin-top: 2rem;">
+            <p>
+              We build upon the SUN-RGBD dataset and construct <strong>OV-IGOD Bench</strong> through a novel multi-stage pipeline:
+            </p>
+            <ul>
+              <li><strong>Detail Caption Generation:</strong> Using InternVL3-8B to generate comprehensive scene descriptions capturing fine-grained visual details and spatial relationships.</li>
+              <li><strong>Intention Generation:</strong> Employing GPT-4o with specialized prompting to create authentic human intentions that reflect natural language expressions of needs without explicitly naming target objects.</li>
+              <li><strong>Quality Checking:</strong> Implementing rigorous validation across scene-context alignment, ambiguity assessment, and format diversity to ensure high annotation quality.</li>
+            </ul>
+            <p>
+              The resulting dataset contains <strong>9.3K images</strong> with <strong>21.5K intention annotations</strong>, averaging 2.31 intentions per image with significant diversity in linguistic structure (9-24 words, mean 14.52).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End dataset construction -->
+
+
+
+
+<!-- Method Section -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">PF-Florence: Prompted Feature-wise Linear Modulation</h2>
+          <img src="static/myimages/Fig3.png" alt="PF-Florence architecture overview" style="width: 100%; max-width: 1000px;"/>
+          <p class="has-text-centered is-size-6 has-text-grey">
+            <strong>Fig. 3.</strong> Architecture overview of our PF-Florence model. (a) Overall design showing the sequence-to-sequence framework with tokenizer, vision encoder enhanced with P-FiLM layers, and transformer decoders for intention-guided object detection. (b) Integration of P-FiLM layers within the DaViT vision encoder. (c) Detailed structure of the P-FiLM layer with Prompted Generation Module (PGM).
+          </p>
+          
+          <div class="content has-text-justified" style="margin-top: 2rem;">
+            <h3 class="title is-4">Key Innovation: P-FiLM Mechanism</h3>
+            <p>
+              Our <strong>Prompted Feature-wise Linear Modulation (P-FiLM)</strong> addresses limitations in conventional FiLM approaches through:
+            </p>
+            <div class="columns">
+              <div class="column">
+                <h4 class="title is-5">Prompted Generation Module (PGM)</h4>
+                <ul>
+                  <li>Dynamically generates input-conditioned prompts from learnable components</li>
+                  <li>Uses global average pooling and learnable queries to extract relevant textual information</li>
+                  <li>Enables adaptive focus on different aspects of intention text based on visual context</li>
+                </ul>
+              </div>
+              <div class="column">
+                <h4 class="title is-5">Feature Modulation</h4>
+                <ul>
+                  <li>Generates scaling (γ) and shift (β) parameters from prompt features</li>
+                  <li>Modulates visual features through element-wise operations</li>
+                  <li>Strategically integrated between spatial and channel attention blocks in DaViT encoder</li>
+                </ul>
+              </div>
+            </div>
+            <p>
+              Unlike conventional FiLM that applies static text representations, P-FiLM actively queries relevant information from intention text, enabling better understanding of complex free-form intentions and achieving superior performance in intention-guided object detection.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End method section -->
+
+
+<!-- Results Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Experimental Results</h2>
+          
+          <!-- Quantitative Results -->
+          <div class="content has-text-justified" style="margin-bottom: 2rem;">
+            <h3 class="title is-4">Quantitative Results</h3>
+            <p>
+              Our PF-Florence model achieves state-of-the-art performance on the OV-IGOD benchmark, significantly outperforming existing approaches:
+            </p>
+            
+            <div class="table-container">
+              <table class="table is-striped is-hoverable" style="margin: 0 auto;">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>mAP50:95</th>
+                    <th>mAP50</th>
+                    <th>mAP75</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="4" style="font-weight: bold; background-color: #f5f5f5;">Direct Prediction Methods</td>
+                  </tr>
+                  <tr>
+                    <td>Qwen2.5-VL-7B</td>
+                    <td>3.94</td>
+                    <td>6.88</td>
+                    <td>3.12</td>
+                  </tr>
+                  <tr>
+                    <td>GPT-4V</td>
+                    <td>5.31</td>
+                    <td>10.47</td>
+                    <td>6.28</td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" style="font-weight: bold; background-color: #f5f5f5;">Two-Stage Pipeline Methods</td>
+                  </tr>
+                  <tr>
+                    <td>Cambrian-1-8B + Grounding DINO</td>
+                    <td>38.88</td>
+                    <td>48.12</td>
+                    <td>41.78</td>
+                  </tr>
+                  <tr>
+                    <td>Phi-4-multimodal + Grounding DINO</td>
+                    <td>40.03</td>
+                    <td>49.13</td>
+                    <td>43.29</td>
+                  </tr>
+                  <tr>
+                    <td>Qwen2.5-VL-7B + Grounding DINO</td>
+                    <td>39.92</td>
+                    <td>49.30</td>
+                    <td>42.18</td>
+                  </tr>
+                  <tr>
+                    <td>InternVL3-8B + Grounding DINO</td>
+                    <td>37.61</td>
+                    <td>46.65</td>
+                    <td>40.61</td>
+                  </tr>
+                  <tr>
+                    <td>GPT-4V + Grounding DINO</td>
+                    <td>40.75</td>
+                    <td>49.21</td>
+                    <td>42.72</td>
+                  </tr>
+                  <tr style="font-weight: bold; background-color: #e8f5e8;">
+                    <td>PF-Florence (Ours)</td>
+                    <td><strong>52.91</strong></td>
+                    <td><strong>66.97</strong></td>
+                    <td><strong>56.47</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <p style="margin-top: 1rem;">
+              Our method demonstrates significant improvements: <strong>+12.16% mAP50:95</strong>, <strong>+17.76% mAP50</strong>, and <strong>+13.75% mAP75</strong> compared to the best baseline (GPT-4V + Grounding DINO).
+            </p>
+          </div>
+
+          <!-- Qualitative Results -->
+          <h3 class="title is-4">Qualitative Results</h3>
+          <img src="static/myimages/Fig4.png" alt="Qualitative comparison results" style="width: 100%; max-width: 1000px;"/>
+          <p class="has-text-centered is-size-6 has-text-grey">
+            <strong>Fig. 4.</strong> Qualitative comparison on OV-IGOD test cases. Our method demonstrates superior intention understanding and precise localization compared to baseline approaches. Green boxes indicate ground truth annotations, while red boxes show model predictions.
+          </p>
+          
+          <div class="content has-text-justified" style="margin-top: 1rem;">
+            <p>
+              Our qualitative results show that PF-Florence consistently identifies objects that truly align with user intentions, while baseline methods often miss targets or identify contextually inappropriate alternatives. The P-FiLM mechanism enables precise understanding of complex free-form intentions and accurate object localization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End results section -->
+
+
+
+
+
+
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <div class="content has-text-centered">
+        <p class="is-size-4 has-text-grey">Coming Soon...</p>
+        <p class="has-text-grey">BibTeX citation will be available after publication.</p>
+      </div>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+             <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
