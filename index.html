@@ -350,12 +350,73 @@
 </section>
 <!-- End results section -->
 
+<!-- Real-World Experiments Section -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Real-World Experiments</h2>
+          
+          <div class="content has-text-justified" style="margin-bottom: 2rem;">
+            <p>
+              To further validate the practical applicability of our approach, we conduct real-world experiments using naturally captured scenarios that reflect typical user intentions in everyday environments. Due to the limited sample size in real-world settings, we evaluate performance using Intersection over Union (IoU) as the primary metric, comparing our method against representative baselines from both single-stage and two-stage approaches.
+            </p>
+            
+            <!-- Real-World Quantitative Results -->
+            <h3 class="title is-4">Quantitative Results</h3>
+            <p>
+              Our PF-Florence achieves superior performance in real-world scenarios, demonstrating strong practical applicability:
+            </p>
+            
+            <div class="table-container">
+              <table class="table is-striped is-hoverable" style="margin: 0 auto;">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>IoU (%)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>GPT-4V</td>
+                    <td>9.35</td>
+                  </tr>
+                  <tr>
+                    <td>GPT-4V + Grounding DINO</td>
+                    <td>74.98</td>
+                  </tr>
+                  <tr style="font-weight: bold; background-color: #e8f5e8;">
+                    <td>PF-Florence (Ours)</td>
+                    <td><strong>81.97</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <p style="margin-top: 1rem;">
+              Our method achieves <strong>81.97% IoU</strong>, significantly outperforming GPT-4V (9.35% IoU) and GPT-4V + Grounding DINO (74.98% IoU), with <strong>+6.99% improvement</strong> over the best baseline.
+            </p>
+          </div>
 
-
-
-
-
-
+          <!-- Real-World Qualitative Results -->
+          <h3 class="title is-4">Qualitative Analysis</h3>
+          <img src="static/myimages/Fig5.png" alt="Real-world qualitative comparison results" style="width: 100%; max-width: 1000px;"/>
+          <p class="has-text-centered is-size-6 has-text-grey">
+            <strong>Fig. 5.</strong> Qualitative comparison on real-world test cases. Green boxes indicate ground truth, red boxes show predictions.
+          </p>
+          
+          <div class="content has-text-justified" style="margin-top: 1rem;">
+            <p>
+              Figure 5 demonstrates the practical advantages of our approach. Single-stage methods like GPT-4V fail to provide precise localization despite understanding textual intentions. Two-stage pipeline methods achieve better localization but suffer from intention-object misalignment—for example, when seeking "something to snack on", they incorrectly detect irrelevant objects like tennis balls alongside the intended snack. Our PF-Florence consistently identifies objects that truly align with user intentions while avoiding contextually irrelevant detections.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End real-world experiments section -->
 
 
 <!--BibTex citation -->
